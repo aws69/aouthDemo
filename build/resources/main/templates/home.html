@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Authentication spring boot app</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+<h1>Welcome, <span th:text="${username}"></span>!</h1>
+<p>Here are your posts:</p>
+<ul>
+    <li th:each="post : ${userPosts}" th:text="${post.text}"></li>
+</ul>
+</body>
+</html>

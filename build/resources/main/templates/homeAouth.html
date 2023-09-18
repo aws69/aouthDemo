@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+<h1>Welcome, <span th:text="${username}"></span>!</h1>
+<p>Your Posts:</p>
+<ul>
+    <li th:each="post : ${userPosts}" th:text="${post.text}"></li>
+</ul>
+<form action="/addpost" method="post">
+    <label>
+        <input type="text" name="postText" placeholder="Write a new post" />
+    </label>
+    <button type="submit">Post</button>
+</form>
+<a th:href="@{/logout}" class="logout-button">Logout</a>
+</body>
+</html>
